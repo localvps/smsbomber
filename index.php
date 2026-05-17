@@ -536,7 +536,7 @@ function takshopaccessorise($phone)
             font-size: 20px;
         }
         
-        /* استایل پیام‌ها */
+
         .message {
             padding: 18px;
             border-radius: 12px;
@@ -631,8 +631,7 @@ function takshopaccessorise($phone)
         .popup-close:hover {
             background: rgba(255, 255, 255, 0.3);
         }
-        
-        /* فوتر */
+
         .footer {
             margin-top: 30px;
             text-align: center;
@@ -654,7 +653,6 @@ function takshopaccessorise($phone)
             text-decoration: underline;
         }
         
-        /* SVG Icon */
         .svg-icon {
             width: 80px;
             height: 80px;
@@ -702,7 +700,6 @@ function takshopaccessorise($phone)
 <body>
     <div class="container">
         <div class="glass-card">
-            <!-- SVG Icon -->
             <svg class="svg-icon" viewBox="0 0 100 100">
                 <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
